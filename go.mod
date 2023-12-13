@@ -2,7 +2,7 @@ module github.com/zjl233/oapi-sdk-go/v3
 
 go 1.13
 
-replace github.com/larksuite/oapi-sdk-go/v3 => github.com/zjl233/oapi-sdk-go/v3 v3.1.1
+replace github.com/larksuite/oapi-sdk-go/v3 => github.com/zjl233/oapi-sdk-go/v3 v3.1.3
 
 //
 //replace (
