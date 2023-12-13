@@ -2,8 +2,7 @@ module github.com/zjl233/oapi-sdk-go/v3
 
 go 1.13
 
-replace github.com/larksuite/oapi-sdk-go/v3 => github.com/zjl233/oapi-sdk-go/v3 v3_main
-
+replace github.com/larksuite/oapi-sdk-go/v3 => github.com/zjl233/oapi-sdk-go/v3 v3.0.1
 
 //
 //replace (
@@ -38,3 +37,5 @@ replace github.com/larksuite/oapi-sdk-go/v3 => github.com/zjl233/oapi-sdk-go/v3 
 //	github.com/larksuite/oapi-sdk-go/v3/service/wiki => ./service/wiki
 //
 //)
+
+require github.com/larksuite/oapi-sdk-go/v3 v3.0.0-00010101000000-000000000000
