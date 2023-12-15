@@ -17,6 +17,7 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/spf13/cast"
 
 	"github.com/larksuite/oapi-sdk-go/v3/core"
 )
@@ -628,7 +629,7 @@ func (builder *SystemStatusUserOpenParamBuilder) Build() *SystemStatusUserOpenPa
 
 type SystemStatusUserOpenResultEntity struct {
 	UserId  *string `json:"user_id,omitempty"`  // 用户ID
-	EndTime *string `json:"end_time,omitempty"` // 结束时间，传入的应为秒单位的时间戳，距当前的时间跨度不能超过365天。
+	EndTime *int    `json:"end_time,omitempty"` // 结束时间，传入的应为秒单位的时间戳，距当前的时间跨度不能超过365天。
 	Result  *string `json:"result,omitempty"`   // 开启结果
 }
 
@@ -680,7 +681,8 @@ func (builder *SystemStatusUserOpenResultEntityBuilder) Build() *SystemStatusUse
 
 	}
 	if builder.endTimeFlag {
-		req.EndTime = &builder.endTime
+		result := cast.ToInt(builder.endTime)
+		req.EndTime = &result
 
 	}
 	if builder.resultFlag {
